@@ -1,22 +1,22 @@
 class Dotmage < Formula
   desc "E2E-encrypted .env secret manager"
   homepage "https://github.com/dotMage/dotmage"
-  version "2.0.1"
+  version "2.0.2"
   license "AGPL-3.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/dotMage/dotmage/releases/download/v#{version}/dmage-macos-aarch64"
-      sha256 "f2639d781015ea1f7ed90efc973e881f7e05404f75c2b5866d787e98b487c411"
+      sha256 "30725b32135ff7bac3b1a4ea852361c537c104ceefac43f89d92b1ebb9540c14"
     else
       url "https://github.com/dotMage/dotmage/releases/download/v#{version}/dmage-macos-x86_64"
-      sha256 "8b26aff764e3bd5a1906d470b98280053e70665bcbb13feb118d99f4b874cc48"
+      sha256 "29a33224307975eacafafc7d92a2f3a905c7cff7ac6ab5d6afbdbc08a97f74c2"
     end
   end
 
   on_linux do
     url "https://github.com/dotMage/dotmage/releases/download/v#{version}/dmage-linux-x86_64"
-    sha256 "d6ff83284bffd9647e22d39dd6116784350304a01190fb15dbe9760325219f26"
+    sha256 "47a60efb8e2959727f0c817a2f3ba77a0c8780ff366e1fb572ce58db94333947"
   end
 
   def install
