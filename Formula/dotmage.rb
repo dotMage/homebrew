@@ -22,6 +22,9 @@ class Dotmage < Formula
   def install
     binary = Dir["dmage-*"].first || "dmage"
     bin.install binary => "dmage"
+
+    # Runs `dmage completions bash|zsh|fish` and installs each to the right dir.
+    generate_completions_from_executable(bin/"dmage", "completions")
   end
 
   test do
