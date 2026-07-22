@@ -22,9 +22,10 @@ class Dotmage < Formula
   def install
     binary = Dir["dmage-*"].first || "dmage"
     bin.install binary => "dmage"
-
-    # Runs `dmage completions bash|zsh|fish` and installs each to the right dir.
-    generate_completions_from_executable(bin/"dmage", "completions")
+    # NB: we deliberately do NOT generate_completions_from_executable here. It
+    # runs the freshly-installed binary during install, which Homebrew's build
+    # sandbox denies (exec EACCES), aborting the whole install. Users install
+    # completions themselves: `dmage completions zsh > …` (see `dmage --help`).
   end
 
   test do
